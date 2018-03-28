@@ -2,7 +2,7 @@
 # Author: Dr. Scott Heggen      TODO: Change this to your names
 # Username: heggens             TODO: Change this to your usernames
 #
-# Assignment: A10: Caesar Cipher
+# Assignment: A09: Caesar Cipher
 #
 # Purpose: The class imports a file, encrypts the file, and exports the cipher to a new file
 #           You need to implement the decrypt function.
@@ -49,6 +49,8 @@ class CaesarCipher:
         elif self.crypt_type == "decrypt":
             self.cipher = f.read()                   # Set self.cipher to the file contents
         f.close()
+        if __name__ == "__main__":
+            print("File imported: {0}".format(self.input_file))
 
     def export_file(self, text_to_export, filename):
         """
@@ -60,7 +62,8 @@ class CaesarCipher:
         f = open(filename, "w")
         f.write(text_to_export)
         f.close()
-        print("File exported to " + filename)
+        if __name__ == "__main__":
+            print("File exported: {0}".format(filename))
 
     def encrypt(self):
         """
@@ -77,8 +80,9 @@ class CaesarCipher:
                 output += self.alphabet[(old_letter + self.key) % 26]
             else:
                 output += i         # Adds non-alphabet characters directly
+        if __name__ == "__main__":
+            print("Message Encrypted")
         return output
-
 
     def decrypt(self):
         """
@@ -88,7 +92,10 @@ class CaesarCipher:
         """
         # TODO Complete the decrypt method
         output = ""
+        if __name__ == "__main__":
+            print("Message Decrypted")
         return output           # Obviously this should output something else
+
 
 def main():
     # A sample encryption
@@ -99,21 +106,22 @@ def main():
 
     # Caesar has some letters to send and receive.
     # Letter 1 goes to P. Lentulus Spinther, who has agreed with Caesar to use a key of 3
-    # TODO Construct a new CaesarCipher object called cipher1
+    # TODO Construct a new CaesarCipher object called cipher_lentulus
     # TODO Encrypt the file specified in the constructor
     # TODO Write the output to a file
 
 
     # Letter 2 goes to Marcus Tullius Cicero, who has agreed to use a key of 14
-    # TODO Construct a new CaesarCipher object called cipher2
+    # TODO Construct a new CaesarCipher object called cipher_marcus
     # TODO Encrypt the file specified in the constructor
     # TODO Write the output to a file
 
 
     # Letter 3 is coming from Cicero for Caesar to decrypt. Again, they agreed to use key 14
-    cipher3 = CaesarCipher("letter_from_friend_3.txt", 14, "decrypt")   # constructs a new CaesarCipher object called cipher3
+    cipher3 = CaesarCipher("cipher_from_friend_3.txt", 14, "decrypt")   # constructs a new CaesarCipher object called cipher3
     # TODO Decrypt the file specified in the constructor
     # TODO Write the output to a file using the export_file() method
+
 
 if __name__ == "__main__":
     main()
