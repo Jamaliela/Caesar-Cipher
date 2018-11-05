@@ -1,6 +1,6 @@
 ######################################################################
-# Author: Dr. Scott Heggen      TODO: Change this to your names
-# Username: heggens             TODO: Change this to your usernames
+# Author: Emily Lovell & Scott Heggen      TODO: Change this to your names
+# Username: lovelle & heggens             TODO: Change this to your usernames
 #
 # Assignment: A09: Caesar Cipher
 #
