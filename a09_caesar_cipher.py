@@ -103,7 +103,7 @@ class CaesarCipher:
                 # when the index is negative it will go back to the end of the alphabet
                 output += self.alphabet[new_letter - self.key % 26]
             else:
-                output += i
+                output += i     # Adds non-alphabet characters directly
         if __name__ == "__main__":
             print("Message Decrypted")
         return output           # Obviously this should output something else
