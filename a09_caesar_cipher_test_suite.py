@@ -1,6 +1,7 @@
 from a09_caesar_cipher import *
 import sys
 
+
 def testit(did_pass):
     """  Prints the result of a test.  """
     linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
@@ -50,7 +51,25 @@ def CaesarCipher_test_suite():
 
     testit(caesar.decrypt() == "IT'S A SO-SO KIND OF DAY!")
 
+    # adding new tests
 
+    # test encrypting a normal string
+    caesar.key = 3
+    caesar.message = "Whatever attention or affection I may shew you"
+
+    testit(caesar.encrypt() == "ZKDWHYHU DWWHQWLRQ RU DIIHFWLRQ L PDB VKHZ BRX")
+
+    # test encrypts a string with punctuation
+    caesar.key = 14
+    caesar.message = ", and Crassus,"
+
+    testit(caesar.encrypt() == ", OBR QFOGGIG,")
+
+    # test decrypt a string with punctuation
+    caesar.key = 14
+    caesar.cipher = "QWQSFC UFSSHG QOSGOF, WADSFOHCF."
+
+    testit(caesar.decrypt() == "CICERO GREETS CAESAR, IMPERATOR.")
     # what other tests should you add?
 
 
