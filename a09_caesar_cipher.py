@@ -122,7 +122,7 @@ def main():
     # TODO Encrypt the file specified in the constructor
     cipher_lentulus_text = cipher_lentulus.encrypt()                  # encrypts the file specified in the constructor
     # TODO Write the output to a file
-    cipher_lentulus.export_file(cipher_lentulus_text, "letter_to_friend_1_encrypted.txt")   # writes the output to a file
+    cipher_lentulus.export_file(cipher_lentulus_text, "cipher_to_friend_1.txt")   # writes the output to a file
 
     # Letter 2 goes to Marcus Tullius Cicero, who has agreed to use a key of 14
     # TODO Construct a new CaesarCipher object called cipher_marcus
@@ -130,14 +130,14 @@ def main():
     # TODO Encrypt the file specified in the constructor
     cipher_marcus_text = cipher_marcus.encrypt()       # encrypts the file specified in the constructor
     # TODO Write the output to a file
-    cipher_marcus.export_file(cipher_marcus_text, "letter_to_friend_2_encrypted.txt")   # writes the output to a file
+    cipher_marcus.export_file(cipher_marcus_text, "cipher_to_friend_2.txt")   # writes the output to a file
 
     # Letter 3 is coming from Cicero for Caesar to decrypt. Again, they agreed to use key 14
     cipher3 = CaesarCipher("cipher_from_friend_3.txt", 14, "decrypt")   # constructs a new CaesarCipher object called cipher3
     # TODO Decrypt the file specified in the constructor
     cipher3_text = cipher3.decrypt()   # decrypts the file specified in the constructor
     # TODO Write the output to a file using the export_file() method
-    cipher3.export_file(cipher3_text, "cipher_from_friend_3_decrypted.txt")   # writes the output to a file
+    cipher3.export_file(cipher3_text, "message_from_friend_3.txt")   # writes the output to a file
 
 
 if __name__ == "__main__":
