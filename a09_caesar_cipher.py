@@ -1,6 +1,6 @@
 ######################################################################
-# Author: Emily Lovell & Scott Heggen      TODO: Change this to your names
-# Username: lovelle & heggens             TODO: Change this to your usernames
+# Author: Emily Lovell & Scott Heggen      TODO: Ela Jamali & Emely Alfaro Zavala
+# Username: lovelle & heggens             TODO: Jamalie & Alfarozavalae
 #
 # Assignment: A09: Caesar Cipher
 #
@@ -18,7 +18,11 @@
 
 
 class CaesarCipher:
-    # FIXME: Add a docstring for the class definition
+    """
+    The CaesarCipher class represents and manipulates key, input file and the crypt type
+    This class will import a file that needs to be encrypted or decrypted, with an integer representing the key
+    it will decrypt or decrypt the given file
+    """
 
     alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"            # The alphabet, which will be used to do our shifts
 
@@ -92,6 +96,14 @@ class CaesarCipher:
         """
         # TODO Complete the decrypt method
         output = ""
+        for i in self.cipher:
+            if i.upper() in self.alphabet:
+                new_letter = self.alphabet.find(i.upper())
+                # we use the module to return the correct module after the inverse
+                # when the index is negative it will go back to the end of the alphabet
+                output += self.alphabet[new_letter - self.key % 26]
+            else:
+                output += i
         if __name__ == "__main__":
             print("Message Decrypted")
         return output           # Obviously this should output something else
@@ -107,12 +119,15 @@ def main():
     # Caesar has some letters to send and receive.
     # Letter 1 goes to P. Lentulus Spinther, who has agreed with Caesar to use a key of 3
     # TODO Construct a new CaesarCipher object called cipher_lentulus
+    cipher_lentulus = CaesarCipher("letter_to_friend_1.txt", 3, "encrypt")   # constructing a new CaesarCipher object
     # TODO Encrypt the file specified in the constructor
+    cipher_lentulus_text = cipher_lentulus.encrypt()
     # TODO Write the output to a file
-
+    cipher_lentulus.export_file(cipher_lentulus_text, "letter_to_friend_1_encrypted.txt")
 
     # Letter 2 goes to Marcus Tullius Cicero, who has agreed to use a key of 14
     # TODO Construct a new CaesarCipher object called cipher_marcus
+    cipher_marcus = CaesarCipher("letter_to_friend_2.txt", 14, "encrypt")   # constructing a new CaesarCipher object
     # TODO Encrypt the file specified in the constructor
     # TODO Write the output to a file
 
