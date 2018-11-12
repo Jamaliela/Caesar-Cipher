@@ -115,27 +115,29 @@ def main():
     cipher_text0 = cipher0.encrypt()                            # Encrypts the file specified in the constructor
     cipher0.export_file(cipher_text0, "cipher_sample.txt")      # Writes the output to a file
 
-
     # Caesar has some letters to send and receive.
     # Letter 1 goes to P. Lentulus Spinther, who has agreed with Caesar to use a key of 3
     # TODO Construct a new CaesarCipher object called cipher_lentulus
     cipher_lentulus = CaesarCipher("letter_to_friend_1.txt", 3, "encrypt")   # constructing a new CaesarCipher object
     # TODO Encrypt the file specified in the constructor
-    cipher_lentulus_text = cipher_lentulus.encrypt()
+    cipher_lentulus_text = cipher_lentulus.encrypt()                  # encrypts the file specified in the constructor
     # TODO Write the output to a file
-    cipher_lentulus.export_file(cipher_lentulus_text, "letter_to_friend_1_encrypted.txt")
+    cipher_lentulus.export_file(cipher_lentulus_text, "letter_to_friend_1_encrypted.txt")   # writes the output to a file
 
     # Letter 2 goes to Marcus Tullius Cicero, who has agreed to use a key of 14
     # TODO Construct a new CaesarCipher object called cipher_marcus
     cipher_marcus = CaesarCipher("letter_to_friend_2.txt", 14, "encrypt")   # constructing a new CaesarCipher object
     # TODO Encrypt the file specified in the constructor
+    cipher_marcus_text = cipher_marcus.encrypt()       # encrypts the file specified in the constructor
     # TODO Write the output to a file
-
+    cipher_marcus.export_file(cipher_marcus_text, "letter_to_friend_2_encrypted.txt")   # writes the output to a file
 
     # Letter 3 is coming from Cicero for Caesar to decrypt. Again, they agreed to use key 14
     cipher3 = CaesarCipher("cipher_from_friend_3.txt", 14, "decrypt")   # constructs a new CaesarCipher object called cipher3
     # TODO Decrypt the file specified in the constructor
+    cipher3_text = cipher3.decrypt()   # decrypts the file specified in the constructor
     # TODO Write the output to a file using the export_file() method
+    cipher3.export_file(cipher3_text, "cipher_from_friend_3_decrypted.txt")   # writes the output to a file
 
 
 if __name__ == "__main__":
